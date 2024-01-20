@@ -19,26 +19,12 @@ function Signin() {
   const handleButtonClick = () => {
     toast.success('Account Created Successfully'); // Displays a success message
   };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    const email = event.target.elements.email.value;
-    const password = event.target.elements.password.value;
-    const confirmPassword = event.target.elements.confirmPassword.value;
-
-    if(!name || !email || !password || !confirmPassword){
-      toast.error('Account Creation Failed');
-      return;
-    }
-
-  };
   return (
     <div className="h-screen w-screen flex">
       <div className="bg-slate-950 w-1/3 h-screen"></div>
       <div className="w-2/3 flex flex-wrap flex-col items-center justify-center">
         <Card className="sm:w-[700px]">
-          <form onSubmit={handleSubmit}>
+          <form>
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl">Create Account</CardTitle>
             <CardDescription>Enter your details below</CardDescription>
